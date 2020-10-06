@@ -1,0 +1,12 @@
+.Wallets {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.WalletsTitle {
+  /*display: inline-block;*/
+  /*justify-self: left;*/
+  /*margin-right: auto;*/
+}

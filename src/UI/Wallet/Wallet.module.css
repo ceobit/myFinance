@@ -1,0 +1,37 @@
+/*.Wallet {*/
+/*  position: relative;*/
+/*  width: 50px; !* задаете свои размеры *!*/
+/*  height: 50px;*/
+/*  overflow: hidden;*/
+/*  background: #fff;*/
+/*  padding: 5px; !* создание отступов *!*/
+/*  border-radius: 50%;*/
+/*  margin: 10px 15px;*/
+/*  !* не забываем о кроссбраузерности *!*/
+/*  -moz-border-radius: 50%;*/
+/*  -webkit-border-radius: 50%;*/
+/*  border: #aaa 1px solid;*/
+/*  box-shadow: 0 1px 1px 1px #bbb; !* тень *!*/
+/*  -moz-box-shadow: 0 1px 1px 1px #bbb;*/
+/*  -webkit-box-shadow: 0 1px 1px 1px #bbb;*/
+/*}*/
+
+.Wallet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 10px 15px;
+  border: #aaa 1px solid;
+  border-radius: 10%;
+  box-shadow: 0 1px 1px 1px #bbb; /* тень */
+  cursor: pointer;
+}
+
+.walletIcon {
+  color: deepskyblue;
+  width: 4em;
+  height: 4em;
+}
