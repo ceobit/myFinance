@@ -1,23 +1,22 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./Modal.module.css";
-import Context from "../../Context/Context";
+// import WalletContent from '../WalletContent/WalletContent';
 
-export default function Modal({ id }) {
-  const { openWalletSettings } = useContext(Context);
+export default function Modal({ id, handleModal}) {
 
   return (
-    <>
       <div className={classes.modal}>
         <div className={classes.modalBody}>
           <img
             src={require("../../images/close.png")}
             className={classes.modalClose}
             alt="close modal"
-            onClick={openWalletSettings.bind(null, false)}
+            onClick={handleModal}
           />
-          <h1>{`Settings wallet № ${id}`} </h1>
+          {/*<WalletContent*/}
+          {/*  id={id}*/}
+          {/*/>*/}
         </div>
       </div>
-    </>
   );
 }

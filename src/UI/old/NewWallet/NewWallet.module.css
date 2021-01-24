@@ -1,0 +1,19 @@
+.NewWallet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 10px 0 0 40px;
+    border: #aaa 1px solid;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px 1px #bbb; /* тень */
+    cursor: pointer;
+}
+
+.NewWalletIcon {
+    color: deepskyblue;
+    width: 3em;
+    height: 3em;
+}

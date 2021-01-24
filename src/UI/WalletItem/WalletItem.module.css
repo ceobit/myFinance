@@ -1,0 +1,33 @@
+
+.WalletItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 10px 15px;
+    border: #aaa 1px solid;
+    border-radius: 10%;
+    box-shadow: 0 1px 1px 1px #bbb; /* тень */
+    cursor: pointer;
+}
+
+.walletIcon {
+    color: deepskyblue;
+    width: 4em;
+    height: 4em;
+}
+
+.WalletName {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.WalletBalance {
+    margin: 5px;
+    padding: 0;
+    font-family: "Andale Mono", serif;
+    font-size: 16px;
+    font-weight: bold;
+}

@@ -1,17 +1,21 @@
-import React from "react";
+import React from 'react';
+import {connect} from 'react-redux'
+import WalletItem from '../WalletItem/WalletItem'; //rewrite using @
+import classes from './Wallets.module.css';
 
-import Wallet from "../Wallet/Wallet";
-import classes from "./Wallets.module.css";
-
-export default function Wallets() {
-  const walletsArray = new Array(3).fill(100); // Этот массив будем получать из базы данных
+const Wallets = ({defaultWallets}) => {
 
   return (
     <div className={classes.Wallets}>
-      <h1 className={classes.WalletsTitle}>Wallets</h1>
-      {walletsArray.map((wallet, index) => (
-        <Wallet key={index} balance={`${wallet}$`} id={index+1}/>
-      ))}
+      {defaultWallets.map((wallet, i) => <WalletItem key={i} wallet={wallet} /> )}
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    defaultWallets: state.wallets.wallets
+  };
+}
+
+export default connect(mapStateToProps, null)(Wallets);
