@@ -1,20 +1,21 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import WalletItem from '../WalletItem/WalletItem'; //rewrite using @
+import NewWallet from '../NewWallet/NewWallet';
 import classes from './Wallets.module.css';
 
-const Wallets = ({defaultWallets}) => {
-
+const Wallets = ({Wallets = []}) => {
   return (
     <div className={classes.Wallets}>
-      {defaultWallets.map((wallet, i) => <WalletItem key={i} wallet={wallet} /> )}
+      {Wallets.map((wallet, i) => <WalletItem key={wallet.id} wallet={wallet} /> )}
+      <NewWallet />
     </div>
   );
 }
 
 const mapStateToProps = state => {
   return {
-    defaultWallets: state.wallets.wallets
+    Wallets: state.wallets.wallets
   };
 }
 

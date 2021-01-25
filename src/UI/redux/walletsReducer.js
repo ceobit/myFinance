@@ -1,10 +1,18 @@
 import walletsArray from '../../tests/dataWallet';
+import {CREATE_WALLET, SET_CURRENT_WALLET} from './types';
 
 const intialState = {
   wallets: walletsArray,
-  fetchedWallets: []
+  fetchedWallets: [],
+  currentWallet: 0
 }
 
 export const walletsReducer = (state = intialState, action) => {
-  return state;
+  switch (action.type) {
+    case SET_CURRENT_WALLET:
+      return {...state, currentWallet: action.payload}
+    case CREATE_WALLET:
+      return {...state, wallets: [...state.wallets, action.payload] }
+    default: return state
+  }
 }
