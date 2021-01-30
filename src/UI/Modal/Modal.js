@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Modal.module.css";
 import WalletContent from "../WalletContent/WalletContent";
 
-export default function Modal({id, handleModal}) {
+export default function Modal({handleModal}) {
   return (
     <div className={classes.modal}>
       <div className={classes.modalBody}>
@@ -12,7 +12,7 @@ export default function Modal({id, handleModal}) {
           alt="close modal"
           onClick={handleModal}
         />
-        <WalletContent id={id}/>
+        <WalletContent/>
       </div>
     </div>
   );

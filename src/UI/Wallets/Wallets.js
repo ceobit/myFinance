@@ -2,12 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux'
 import WalletItem from '../WalletItem/WalletItem'; //rewrite using @
 import NewWallet from '../NewWallet/NewWallet';
-import classes from './Wallets.module.css';
+import classes from './Wallets.module.scss';
 
-const Wallets = ({Wallets = []}) => {
+const Wallets = ({wallets = []}) => {
   return (
     <div className={classes.Wallets}>
-      {Wallets.map((wallet, i) => <WalletItem key={wallet.id} wallet={wallet} /> )}
+      {wallets.map(wallet => <WalletItem key={wallet.id} wallet={wallet} /> )}
       <NewWallet />
     </div>
   );
@@ -15,7 +15,7 @@ const Wallets = ({Wallets = []}) => {
 
 const mapStateToProps = state => {
   return {
-    Wallets: state.wallets.wallets
+    wallets: state.wallets.wallets
   };
 }
 

@@ -1,0 +1,4 @@
+.WalletContent {
+    display: flex;
+    flex-direction: column;
+}

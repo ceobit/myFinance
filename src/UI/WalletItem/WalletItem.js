@@ -12,8 +12,6 @@ const WalletItem = (props) => { // Как переделать action, чтоб�
 
   const {name, balance, currency, id} = props.wallet;
 
-  // console.log(store);
-
   const handleModal = () => {
     setIsOpen(!isOpen);
     props.setCurrentWallet(!isOpen ? id : 0);
@@ -28,7 +26,7 @@ const WalletItem = (props) => { // Как переделать action, чтоб�
           {`${balance} ${currency}`}{" "}
         </p>
       </div>
-      {isOpen && <Modal id={id} handleModal={handleModal}/>}
+      {isOpen && <Modal handleModal={handleModal}/>}
     </>
   );
 }
