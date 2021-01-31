@@ -12,6 +12,7 @@ export const walletsReducer = (state = intialState, action) => {
     case SET_CURRENT_WALLET:
       return {...state, currentWallet: action.payload}
     case CREATE_WALLET:
+      console.log(action.payload);
       return {...state, wallets: [...state.wallets, action.payload] }
     default: return state
   }

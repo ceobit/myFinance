@@ -1,22 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
+import { Field, Form } from "react-final-form";
+import { connect } from "react-redux";
 
 import classes from "./NewWallet.module.css";
-import { BsPlusSquare } from "react-icons/all";
-import Modal from "../Modal/Modal";
+import { createWallet } from "../redux/actions";
 
-export default function NewWallet() {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const handleModal = () => {
-    setIsOpen(!isOpen);
+const NewWalletForm = (props) => {
+
+  const onSubmit = (values) => {
+    props.createWallet({ ...values, currency: "EUR", id: 4 }); // пока грабли
   };
 
   return (
-    <>
-      <div className={classes.NewWallet} onClick={handleModal}>
-        <BsPlusSquare className={classes.NewWalletIcon} />
-      </div>
-      {isOpen && <Modal handleModal={handleModal} />}
-    </>
+    <Form
+      onSubmit={onSubmit}
+      render={({ handleSubmit }) => (
+        <form className={classes.NewWalletContent} onSubmit={handleSubmit}>
+          <Field
+            component="input"
+            name="name"
+            placeholder="Wallet name"
+            required
+          />
+          <Field
+            component="input"
+            name="balance"
+            placeholder="Enter balance"
+            required
+          />
+          <button type="submit" value="Submit">
+            Save
+          </button>
+        </form>
+      )}
+    />
   );
-}
+};
+
+const mapDispatchToProps = {
+  createWallet,
+};
+
+export default connect(null, mapDispatchToProps)(NewWalletForm);

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import {connect} from 'react-redux';
 import { FaWallet } from "react-icons/all";
 
 import classes from "./WalletItem.module.css";
 import Modal from "../Modal/Modal";
-import {connect} from 'react-redux';
 import {setCurrentWallet} from '../redux/actions';
 
 

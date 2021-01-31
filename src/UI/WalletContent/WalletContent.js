@@ -1,13 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import walletsArray from "../../tests/dataWallet";
 import classes from "./WalletContent.module.css";
+import NewWallet from "../NewWallet/NewWallet";
 
-const WalletContent = ({ currentWallet }) => {
-  const walletData = walletsArray.find((el) => el.id === currentWallet);
+const WalletContent = ({ currentWallet, wallets }) => {
+  const walletData = wallets.find((el) => el.id === currentWallet);
+  return (
+    <>
+      {walletData !== undefined ? (
+        <Content walletData={walletData} />
+      ) : (
+        <NewWallet />
+      )}
+    </>
+  );
+};
+
+const Content = ({ walletData }) => {
   const { name, balance, currency } = walletData;
-
   return (
     <div className={classes.WalletContent}>
       <h2>{name}</h2>
@@ -21,6 +32,7 @@ const WalletContent = ({ currentWallet }) => {
 const mapStateToProps = (state) => {
   return {
     currentWallet: state.wallets.currentWallet,
+    wallets : state.wallets.wallets
   };
 };
 
