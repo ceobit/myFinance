@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import classes from "./AddWallet.module.css";
-import { BsPlusSquare } from "react-icons/all";
-import Modal from "../Modal/Modal";
+import { BsPlusSquare } from 'react-icons/all';
+import classes from './AddWallet.module.css';
+import Modal from '../Modal/Modal';
 
 export default function AddWallet() {
   const [isOpen, setIsOpen] = useState(false);
